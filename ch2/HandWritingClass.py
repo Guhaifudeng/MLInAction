@@ -1,7 +1,7 @@
 #!python27
 # -*- coding: utf-8 -*-
 '''
-Created on Mar 10, 2017
+Created on Apr 10, 2017
 Example: using kNN on a handwriting recognition system
 1. Collect: Text file provided.
 2. Prepare: Write a function to convert from the image format to the list format

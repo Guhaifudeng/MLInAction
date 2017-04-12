@@ -1,7 +1,7 @@
 #!python27
 # -*- coding: utf-8 -*-
 '''
-Created on Mar 10, 2017
+Created on Apr 10, 2017
 kNN: k Nearest Neighbors
 
 Input:      inX: vector to compare to existing dataset (1xN)

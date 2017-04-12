@@ -1,7 +1,7 @@
 #!python27
 # -*- coding: utf-8 -*-
 '''
-Created on Mar 10, 2017
+Created on Apr 10, 2017
 create dataset to test the functions in this book
 '''
 from numpy import *

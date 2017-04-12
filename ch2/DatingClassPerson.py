@@ -1,7 +1,7 @@
 #!python27
 # -*- coding: utf-8 -*-
 '''
-Created on Mar 10, 2017
+Created on Apr 10, 2017
 Example: using kNN on results from a dating site
 1. Collect: Text file provided.
 2. Prepare: Parse a text file in Python.
