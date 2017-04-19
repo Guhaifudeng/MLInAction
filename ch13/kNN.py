@@ -16,6 +16,7 @@ Output:     the most popular class label
 from numpy import *
 import operator
 from os import listdir
+import numpy as np
 #读取文件数据，保存为matrix(NxM)，labels(Nx1)
 def file2matrix(filename):
     fr = open(filename)
@@ -47,15 +48,25 @@ def classify0(inX, dataSet, labels, k):
     dataSetSize = dataSet.shape[0] # 数据集元素个数n
     #dataSet.astype('float64')
     diffMat = tile(inX, (dataSetSize,1)) - dataSet #差值矩阵n个xA-xB
-    sqDiffMat = diffMat**2 #平方矩阵
-    sqDistances = sqDiffMat.sum(axis=1) #距离矩阵Nx1
-    distances = sqDistances**0.5
+    #sqDiffMat = diffMat**2 #平方矩阵
 
+    sqDiffMat = diffMat ** 2
+    #print sqDiffMat[1]
+    sqDistances = sqDiffMat.sum(axis=1) #距离矩阵Nx1
+    distances = sqDistances ** 0.5
+    #print type(distances)
+    distances =np.array(distances)
+    #print type(distances)
     sortedDistIndicies = distances.argsort() #按照距离值排序得到索引序列
     classCount={}
+    #print type(classCount)
     for i in range(k):
         voteIlabel = labels[sortedDistIndicies[i]] #得到排在第i位的目标值
-        print type(voteIlabel)
+        #print voteIlabel
+        voteIlabel = int(voteIlabel)
+        #print type(classCount)
+        #print type(voteIlabel)
+        #print voteIlabel
         classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 # k个点中的目标值计数
     sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
     return sortedClassCount[0][0]
